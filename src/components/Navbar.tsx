@@ -2,6 +2,13 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, X, ChevronDown, Phone } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -40,33 +47,44 @@ const Navbar = () => {
 
           {/* Desktop menu */}
           <div className="hidden md:flex items-center space-x-8">
-            <div className="relative group">
-              <button 
-                className={`flex items-center space-x-1 text-white hover:opacity-80 transition-opacity duration-300`}
-              >
-                <span>Services</span>
-                <ChevronDown size={16} />
-              </button>
-              <div className="absolute left-0 mt-2 w-48 rounded-sm shadow-lg bg-dark-100 ring-1 ring-dark-50 ring-opacity-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top-left">
-                <div className="py-1">
-                  <Link to="/private-jets" className="block px-4 py-2 text-sm text-white hover:bg-dark-50">Private Jets</Link>
-                  <Link to="/concierge" className="block px-4 py-2 text-sm text-white hover:bg-dark-50">Concierge</Link>
-                  <Link to="/membership" className="block px-4 py-2 text-sm text-white hover:bg-dark-50">Membership</Link>
-                </div>
-              </div>
-            </div>
-            <Link to="/about" className="text-white hover:opacity-80 transition-opacity duration-300">
-              About Us
-            </Link>
-            <Link to="/fleet" className="text-white hover:opacity-80 transition-opacity duration-300">
-              Our Fleet
-            </Link>
-            <Link to="/destinations" className="text-white hover:opacity-80 transition-opacity duration-300">
-              Destinations
-            </Link>
-            <Link to="/contact" className="text-white hover:opacity-80 transition-opacity duration-300">
-              Contact
-            </Link>
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button 
+                  variant="ghost" 
+                  className="text-white hover:bg-transparent hover:opacity-80 transition-opacity"
+                >
+                  <span>Services</span>
+                  <ChevronDown size={16} />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="bg-dark-100/90 backdrop-blur-md border-neutral-700 text-white">
+                <DropdownMenuItem asChild>
+                  <Link to="/private-jets" className="hover:bg-dark-50">Private Jets</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link to="/concierge" className="hover:bg-dark-50">Concierge</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link to="/membership" className="hover:bg-dark-50">Membership</Link>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+            
+            <Button variant="ghost" asChild className="text-white hover:bg-transparent hover:opacity-80 transition-opacity">
+              <Link to="/about">About Us</Link>
+            </Button>
+            
+            <Button variant="ghost" asChild className="text-white hover:bg-transparent hover:opacity-80 transition-opacity">
+              <Link to="/fleet">Our Fleet</Link>
+            </Button>
+            
+            <Button variant="ghost" asChild className="text-white hover:bg-transparent hover:opacity-80 transition-opacity">
+              <Link to="/destinations">Destinations</Link>
+            </Button>
+            
+            <Button variant="ghost" asChild className="text-white hover:bg-transparent hover:opacity-80 transition-opacity">
+              <Link to="/contact">Contact</Link>
+            </Button>
           </div>
 
           <div className="hidden md:flex items-center space-x-4">
@@ -77,22 +95,23 @@ const Navbar = () => {
               <Phone size={16} />
               <span>+1 234 567 8900</span>
             </a>
-            <a 
-              href="/book-now" 
+            <Button 
               className="elegant-button-gold"
+              asChild
             >
-              Book Now
-            </a>
+              <a href="/book-now">Book Now</a>
+            </Button>
           </div>
 
           {/* Mobile menu button */}
           <div className="md:hidden">
-            <button 
-              onClick={() => setIsOpen(!isOpen)} 
-              className="text-white focus:outline-none"
+            <Button 
+              variant="ghost"
+              className="text-white p-2" 
+              onClick={() => setIsOpen(!isOpen)}
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
-            </button>
+            </Button>
           </div>
         </div>
       </div>
@@ -100,20 +119,36 @@ const Navbar = () => {
       {/* Mobile menu */}
       <div className={`md:hidden ${isOpen ? 'block' : 'hidden'} bg-dark-100 shadow-xl animate-fade-in`}>
         <div className="px-2 pt-2 pb-3 space-y-1">
-          <Link to="/private-jets" className="block px-4 py-2 text-white hover:bg-dark-50 rounded-sm">Private Jets</Link>
-          <Link to="/concierge" className="block px-4 py-2 text-white hover:bg-dark-50 rounded-sm">Concierge</Link>
-          <Link to="/membership" className="block px-4 py-2 text-white hover:bg-dark-50 rounded-sm">Membership</Link>
-          <Link to="/about" className="block px-4 py-2 text-white hover:bg-dark-50 rounded-sm">About Us</Link>
-          <Link to="/fleet" className="block px-4 py-2 text-white hover:bg-dark-50 rounded-sm">Our Fleet</Link>
-          <Link to="/destinations" className="block px-4 py-2 text-white hover:bg-dark-50 rounded-sm">Destinations</Link>
-          <Link to="/contact" className="block px-4 py-2 text-white hover:bg-dark-50 rounded-sm">Contact</Link>
-          <a href="tel:+12345678900" className="flex items-center space-x-2 px-4 py-2 text-white hover:bg-dark-50 rounded-sm">
-            <Phone size={16} />
-            <span>+1 234 567 8900</span>
-          </a>
-          <a href="/book-now" className="block mx-4 mt-2 elegant-button-gold text-center">
-            Book Now
-          </a>
+          <Button variant="ghost" asChild className="w-full justify-start text-white hover:bg-dark-50">
+            <Link to="/private-jets">Private Jets</Link>
+          </Button>
+          <Button variant="ghost" asChild className="w-full justify-start text-white hover:bg-dark-50">
+            <Link to="/concierge">Concierge</Link>
+          </Button>
+          <Button variant="ghost" asChild className="w-full justify-start text-white hover:bg-dark-50">
+            <Link to="/membership">Membership</Link>
+          </Button>
+          <Button variant="ghost" asChild className="w-full justify-start text-white hover:bg-dark-50">
+            <Link to="/about">About Us</Link>
+          </Button>
+          <Button variant="ghost" asChild className="w-full justify-start text-white hover:bg-dark-50">
+            <Link to="/fleet">Our Fleet</Link>
+          </Button>
+          <Button variant="ghost" asChild className="w-full justify-start text-white hover:bg-dark-50">
+            <Link to="/destinations">Destinations</Link>
+          </Button>
+          <Button variant="ghost" asChild className="w-full justify-start text-white hover:bg-dark-50">
+            <Link to="/contact">Contact</Link>
+          </Button>
+          <Button variant="ghost" asChild className="w-full justify-start text-white hover:bg-dark-50">
+            <a href="tel:+12345678900" className="flex items-center space-x-2">
+              <Phone size={16} />
+              <span>+1 234 567 8900</span>
+            </a>
+          </Button>
+          <Button className="elegant-button-gold w-full text-center mt-2" asChild>
+            <a href="/book-now">Book Now</a>
+          </Button>
         </div>
       </div>
     </nav>
