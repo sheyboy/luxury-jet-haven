@@ -8,17 +8,21 @@ const Hero = () => {
     <div className="relative h-screen w-full overflow-hidden">
       <VideoBackground 
         src="https://storage.googleapis.com/vjsf-b725c.appspot.com/videos/luxury-jet.mp4" 
-        opacity={0.8}
+        opacity={0.7}
       />
       
       <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
         <div className="max-w-4xl animate-fade-down">
-          <div className="subtle-chip mb-4 animate-fade-in">Premium Aviation Experience</div>
-          <h1 className="text-5xl md:text-7xl font-light text-white mb-6 leading-tight text-shadow-lg">
-            Elevate Your <span className="font-semibold">Travel Experience</span>
+          <img 
+            src="/lovable-uploads/0f2bf757-893e-4dfa-aa9d-4d71e739309a.png" 
+            alt="JetSett Logo" 
+            className="h-24 mx-auto mb-8 animate-fade-in"
+          />
+          <h1 className="text-5xl md:text-7xl font-light text-white mb-6 leading-tight text-shadow-lg tracking-wider">
+            REDEFINING <span className="font-semibold">TRAVEL</span> REDEFINING <span className="font-semibold">LUXURY</span>
           </h1>
           <p className="text-lg md:text-xl text-white/90 mb-10 max-w-2xl mx-auto leading-relaxed text-shadow">
-            Experience unparalleled luxury and efficiency with our premium private jet charter service. Your journey, redefined.
+            Fly JetSett – Your Exclusive Experience Awaits
           </p>
           
           <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6">
