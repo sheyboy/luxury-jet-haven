@@ -14,7 +14,7 @@ const Hero = () => {
       <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
         <div className="max-w-4xl animate-fade-down">
           <img 
-            src="/lovable-uploads/0f2bf757-893e-4dfa-aa9d-4d71e739309a.png" 
+            src="/lovable-uploads/68a49603-00a2-430e-97c1-da80f0e1c44d.png" 
             alt="JetSett Logo" 
             className="h-24 mx-auto mb-8 animate-fade-in"
           />
