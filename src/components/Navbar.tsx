@@ -96,7 +96,7 @@ const Navbar = () => {
               <span>+1 234 567 8900</span>
             </a>
             <Button 
-              className="elegant-button-gold"
+              className="bg-teal-500 hover:bg-teal-600"
               asChild
             >
               <a href="/book-now">Book Now</a>
@@ -146,7 +146,7 @@ const Navbar = () => {
               <span>+1 234 567 8900</span>
             </a>
           </Button>
-          <Button className="elegant-button-gold w-full text-center mt-2" asChild>
+          <Button className="bg-teal-500 hover:bg-teal-600 w-full text-center mt-2" asChild>
             <a href="/book-now">Book Now</a>
           </Button>
         </div>

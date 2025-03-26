@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
@@ -15,7 +16,7 @@
     --popover: 0 0% 13%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: 221 40% 25%;
+    --primary: 196 32% 42%; /* #487B8E */
     --primary-foreground: 210 40% 98%;
 
     --secondary: 0 0% 15%;
@@ -24,7 +25,7 @@
     --muted: 0 0% 15%;
     --muted-foreground: 0 0% 65%;
 
-    --accent: 36 30% 55%;
+    --accent: 196 32% 42%; /* #487B8E */
     --accent-foreground: 0 0% 98%;
 
     --destructive: 0 62.8% 30.6%;
@@ -32,18 +33,18 @@
 
     --border: 0 0% 20%;
     --input: 0 0% 20%;
-    --ring: 36 30% 55%;
+    --ring: 196 32% 42%; /* #487B8E */
 
     --radius: 0.5rem;
 
     --sidebar-background: 0 0% 13%;
     --sidebar-foreground: 0 0% 98%;
-    --sidebar-primary: 36 30% 55%;
+    --sidebar-primary: 196 32% 42%; /* #487B8E */
     --sidebar-primary-foreground: 0 0% 98%;
     --sidebar-accent: 0 0% 18%;
     --sidebar-accent-foreground: 0 0% 98%;
     --sidebar-border: 0 0% 20%;
-    --sidebar-ring: 36 30% 55%;
+    --sidebar-ring: 196 32% 42%; /* #487B8E */
   }
 }
 
@@ -71,8 +72,8 @@
     @apply px-6 py-3 bg-dark-100 text-white hover:bg-dark-50 transition-all duration-300 rounded-sm shadow-md;
   }
   
-  .elegant-button-gold {
-    @apply px-6 py-3 bg-gold-700 text-white hover:bg-gold-600 transition-all duration-300 rounded-sm shadow-md;
+  .elegant-button-teal {
+    @apply px-6 py-3 bg-teal-500 text-white hover:bg-teal-600 transition-all duration-300 rounded-sm shadow-md;
   }
   
   .elegant-input {
@@ -84,7 +85,15 @@
   }
   
   .subtle-chip {
-    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gold-900/50 text-gold-200 uppercase tracking-wider;
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-teal-900/50 text-teal-200 uppercase tracking-wider;
+  }
+
+  .tab-button {
+    @apply px-4 py-2 rounded-t-md text-white/70 hover:text-white transition-colors;
+  }
+  
+  .tab-button-active {
+    @apply bg-dark-100 text-white border-b-2 border-teal-500;
   }
 }
 
@@ -155,9 +164,35 @@
 }
 
 .luxury-input {
-  @apply bg-dark-200 border border-dark-50 text-white focus:border-gold-700 focus:ring-1 focus:ring-gold-700;
+  @apply bg-dark-200 border border-dark-50 text-white focus:border-teal-500 focus:ring-1 focus:ring-teal-500;
 }
 
 .luxury-select {
-  @apply bg-dark-200 border border-dark-50 text-white focus:border-gold-700 focus:ring-1 focus:ring-gold-700;
+  @apply bg-dark-200 border border-dark-50 text-white focus:border-teal-500 focus:ring-1 focus:ring-teal-500;
+}
+
+.section-heading {
+  @apply text-center mb-12;
+}
+
+.section-heading h2 {
+  @apply text-3xl md:text-4xl font-light text-white mb-2;
+}
+
+.section-heading p {
+  @apply text-white/70 max-w-2xl mx-auto;
+}
+
+.section-divider {
+  @apply flex items-center justify-center my-12;
+}
+
+.section-divider span {
+  @apply text-teal-500 text-xs uppercase tracking-widest font-medium bg-dark-100 px-4;
+}
+
+.section-divider::before,
+.section-divider::after {
+  content: "";
+  @apply flex-1 h-px bg-dark-50;
 }

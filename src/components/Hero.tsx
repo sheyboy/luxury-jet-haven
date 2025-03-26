@@ -18,10 +18,10 @@ const Hero = () => {
           <img 
             src="/lovable-uploads/68a49603-00a2-430e-97c1-da80f0e1c44d.png" 
             alt="JetSett Logo" 
-            className="h-24 mx-auto mb-8 animate-fade-in"
+            className="h-12 mx-auto mb-8 animate-fade-in"
           />
           <h1 className="text-5xl md:text-7xl font-light text-white mb-6 leading-tight text-shadow-lg tracking-wider">
-            REDEFINING <span className="font-semibold">TRAVEL</span> REDEFINING <span className="font-semibold">LUXURY</span>
+            Redefining Travel,<br/> Redefining Luxury
           </h1>
           <p className="text-lg md:text-xl text-white/90 mb-10 max-w-2xl mx-auto leading-relaxed text-shadow">
             Fly JetSett – Your Exclusive Experience Awaits
@@ -30,7 +30,7 @@ const Hero = () => {
           <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6">
             <Button 
               asChild
-              className="elegant-button-gold w-full sm:w-auto flex items-center justify-center space-x-2 animate-fade-up"
+              className="bg-teal-500 hover:bg-teal-600 w-full sm:w-auto flex items-center justify-center space-x-2 animate-fade-up"
             >
               <a href="/book-now">
                 <span>Book Your Flight</span>
