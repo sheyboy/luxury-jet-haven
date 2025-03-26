@@ -15,25 +15,25 @@ const Footer = () => {
             <div className="flex space-x-4">
               <a 
                 href="#" 
-                className="w-10 h-10 rounded-full bg-jet-800 flex items-center justify-center hover:bg-gold-600 transition-colors duration-300"
+                className="w-10 h-10 rounded-full bg-jet-800 flex items-center justify-center hover:bg-[#487B8E] transition-colors duration-300"
               >
                 <Instagram size={18} />
               </a>
               <a 
                 href="#" 
-                className="w-10 h-10 rounded-full bg-jet-800 flex items-center justify-center hover:bg-gold-600 transition-colors duration-300"
+                className="w-10 h-10 rounded-full bg-jet-800 flex items-center justify-center hover:bg-[#487B8E] transition-colors duration-300"
               >
                 <Twitter size={18} />
               </a>
               <a 
                 href="#" 
-                className="w-10 h-10 rounded-full bg-jet-800 flex items-center justify-center hover:bg-gold-600 transition-colors duration-300"
+                className="w-10 h-10 rounded-full bg-jet-800 flex items-center justify-center hover:bg-[#487B8E] transition-colors duration-300"
               >
                 <Facebook size={18} />
               </a>
               <a 
                 href="#" 
-                className="w-10 h-10 rounded-full bg-jet-800 flex items-center justify-center hover:bg-gold-600 transition-colors duration-300"
+                className="w-10 h-10 rounded-full bg-jet-800 flex items-center justify-center hover:bg-[#487B8E] transition-colors duration-300"
               >
                 <Linkedin size={18} />
               </a>
@@ -68,21 +68,21 @@ const Footer = () => {
             <h4 className="text-lg font-medium mb-6">Contact Information</h4>
             <ul className="space-y-4">
               <li className="flex items-start">
-                <PhoneCall size={18} className="mr-3 mt-1 text-gold-500" />
+                <PhoneCall size={18} className="mr-3 mt-1 text-[#487B8E]" />
                 <div>
                   <p className="text-white">+1 234 567 8900</p>
                   <p className="text-jet-300 text-sm">24/7 Support</p>
                 </div>
               </li>
               <li className="flex items-start">
-                <Mail size={18} className="mr-3 mt-1 text-gold-500" />
+                <Mail size={18} className="mr-3 mt-1 text-[#487B8E]" />
                 <div>
                   <p className="text-white">contact@jetsett.com</p>
                   <p className="text-jet-300 text-sm">For inquiries</p>
                 </div>
               </li>
               <li className="flex items-start">
-                <MapPin size={18} className="mr-3 mt-1 text-gold-500" />
+                <MapPin size={18} className="mr-3 mt-1 text-[#487B8E]" />
                 <div>
                   <p className="text-white">Global Headquarters</p>
                   <p className="text-jet-300 text-sm">1234 Aviation Blvd, Suite 500</p>
@@ -101,11 +101,11 @@ const Footer = () => {
               <input 
                 type="email" 
                 placeholder="Your email address" 
-                className="w-full bg-jet-800 border border-jet-700 text-white px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-gold-500"
+                className="w-full bg-jet-800 border border-jet-700 text-white px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-[#487B8E]"
               />
               <button 
                 type="submit" 
-                className="w-full bg-gold-600 text-white px-4 py-2 rounded-md hover:bg-gold-500 transition-colors duration-300"
+                className="w-full bg-[#487B8E] text-white px-4 py-2 rounded-md hover:bg-[#3A6A7D] transition-colors duration-300"
               >
                 Subscribe
               </button>

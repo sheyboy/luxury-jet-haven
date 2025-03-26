@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { Clock, UserCheck, Star, Shield, ArrowRight } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 const ConciergeSection = () => {
   return (
@@ -30,7 +31,7 @@ const ConciergeSection = () => {
                 </div>
               </div>
               <div className="p-6">
-                <div className="flex items-center text-gold-600 mb-4">
+                <div className="flex items-center text-[#487B8E] mb-4">
                   <Star size={18} />
                   <Star size={18} />
                   <Star size={18} />
@@ -45,7 +46,7 @@ const ConciergeSection = () => {
                     <Clock size={16} className="mr-1" />
                     <span>Available 24/7</span>
                   </div>
-                  <a href="/concierge" className="text-gold-600 hover:text-gold-700 font-medium flex items-center transition-colors duration-300">
+                  <a href="/concierge" className="text-[#487B8E] hover:text-[#3A6A7D] font-medium flex items-center transition-colors duration-300">
                     <span>Learn More</span>
                     <ArrowRight size={16} className="ml-1" />
                   </a>
@@ -65,7 +66,7 @@ const ConciergeSection = () => {
                 </div>
               </div>
               <div className="p-6">
-                <div className="flex items-center text-gold-600 mb-4">
+                <div className="flex items-center text-[#487B8E] mb-4">
                   <Star size={18} />
                   <Star size={18} />
                   <Star size={18} />
@@ -80,7 +81,7 @@ const ConciergeSection = () => {
                     <UserCheck size={16} className="mr-1" />
                     <span>Personal preference tracking</span>
                   </div>
-                  <a href="/concierge" className="text-gold-600 hover:text-gold-700 font-medium flex items-center transition-colors duration-300">
+                  <a href="/concierge" className="text-[#487B8E] hover:text-[#3A6A7D] font-medium flex items-center transition-colors duration-300">
                     <span>Learn More</span>
                     <ArrowRight size={16} className="ml-1" />
                   </a>
@@ -125,9 +126,11 @@ const ConciergeSection = () => {
             </div>
             
             <div className="mt-10 text-center">
-              <a href="/concierge" className="elegant-button-gold">
-                Explore All Concierge Services
-              </a>
+              <Button variant="teal" asChild>
+                <a href="/concierge">
+                  Explore All Concierge Services
+                </a>
+              </Button>
             </div>
           </div>
         </div>

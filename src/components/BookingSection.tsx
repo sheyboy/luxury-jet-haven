@@ -1,6 +1,7 @@
 
 import React, { useState } from 'react';
 import { Calendar, MapPin, Users, Clock, Plane, PlaneTakeoff, PlaneLanding } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 const BookingSection = () => {
   const [selectedTab, setSelectedTab] = useState('charter');
@@ -13,7 +14,7 @@ const BookingSection = () => {
             <div className="flex border-b border-dark-200">
               <button
                 className={`flex-1 py-4 px-4 text-center font-medium transition-colors duration-300 ${
-                  selectedTab === 'charter' ? 'text-white border-b-2 border-gold-700' : 'text-neutral-400 hover:text-white'
+                  selectedTab === 'charter' ? 'text-white border-b-2 border-[#487B8E]' : 'text-neutral-400 hover:text-white'
                 }`}
                 onClick={() => setSelectedTab('charter')}
               >
@@ -21,7 +22,7 @@ const BookingSection = () => {
               </button>
               <button
                 className={`flex-1 py-4 px-4 text-center font-medium transition-colors duration-300 ${
-                  selectedTab === 'empty-leg' ? 'text-white border-b-2 border-gold-700' : 'text-neutral-400 hover:text-white'
+                  selectedTab === 'empty-leg' ? 'text-white border-b-2 border-[#487B8E]' : 'text-neutral-400 hover:text-white'
                 }`}
                 onClick={() => setSelectedTab('empty-leg')}
               >
@@ -37,12 +38,12 @@ const BookingSection = () => {
                       <label className="block text-sm font-medium text-white">From</label>
                       <div className="relative">
                         <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                          <PlaneTakeoff size={18} className="text-gold-400" />
+                          <PlaneTakeoff size={18} className="text-[#487B8E]" />
                         </div>
                         <input
                           type="text"
                           placeholder="City or Airport"
-                          className="pl-10 w-full bg-dark-200 border border-dark-50 text-white rounded-sm py-3 focus:ring-2 focus:ring-gold-700 focus:border-transparent transition-all duration-300"
+                          className="pl-10 w-full bg-dark-200 border border-dark-50 text-white rounded-sm py-3 focus:ring-2 focus:ring-[#487B8E] focus:border-transparent transition-all duration-300"
                         />
                       </div>
                     </div>
@@ -51,12 +52,12 @@ const BookingSection = () => {
                       <label className="block text-sm font-medium text-white">To</label>
                       <div className="relative">
                         <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                          <PlaneLanding size={18} className="text-gold-400" />
+                          <PlaneLanding size={18} className="text-[#487B8E]" />
                         </div>
                         <input
                           type="text"
                           placeholder="City or Airport"
-                          className="pl-10 w-full bg-dark-200 border border-dark-50 text-white rounded-sm py-3 focus:ring-2 focus:ring-gold-700 focus:border-transparent transition-all duration-300"
+                          className="pl-10 w-full bg-dark-200 border border-dark-50 text-white rounded-sm py-3 focus:ring-2 focus:ring-[#487B8E] focus:border-transparent transition-all duration-300"
                         />
                       </div>
                     </div>
@@ -67,11 +68,11 @@ const BookingSection = () => {
                       <label className="block text-sm font-medium text-white">Departure Date</label>
                       <div className="relative">
                         <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                          <Calendar size={18} className="text-gold-400" />
+                          <Calendar size={18} className="text-[#487B8E]" />
                         </div>
                         <input
                           type="date"
-                          className="pl-10 w-full bg-dark-200 border border-dark-50 text-white rounded-sm py-3 focus:ring-2 focus:ring-gold-700 focus:border-transparent transition-all duration-300"
+                          className="pl-10 w-full bg-dark-200 border border-dark-50 text-white rounded-sm py-3 focus:ring-2 focus:ring-[#487B8E] focus:border-transparent transition-all duration-300"
                         />
                       </div>
                     </div>
@@ -80,11 +81,11 @@ const BookingSection = () => {
                       <label className="block text-sm font-medium text-white">Return Date</label>
                       <div className="relative">
                         <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                          <Calendar size={18} className="text-gold-400" />
+                          <Calendar size={18} className="text-[#487B8E]" />
                         </div>
                         <input
                           type="date"
-                          className="pl-10 w-full bg-dark-200 border border-dark-50 text-white rounded-sm py-3 focus:ring-2 focus:ring-gold-700 focus:border-transparent transition-all duration-300"
+                          className="pl-10 w-full bg-dark-200 border border-dark-50 text-white rounded-sm py-3 focus:ring-2 focus:ring-[#487B8E] focus:border-transparent transition-all duration-300"
                         />
                       </div>
                     </div>
@@ -93,10 +94,10 @@ const BookingSection = () => {
                       <label className="block text-sm font-medium text-white">Passengers</label>
                       <div className="relative">
                         <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                          <Users size={18} className="text-gold-400" />
+                          <Users size={18} className="text-[#487B8E]" />
                         </div>
                         <select
-                          className="pl-10 w-full bg-dark-200 border border-dark-50 text-white rounded-sm py-3 focus:ring-2 focus:ring-gold-700 focus:border-transparent transition-all duration-300 appearance-none"
+                          className="pl-10 w-full bg-dark-200 border border-dark-50 text-white rounded-sm py-3 focus:ring-2 focus:ring-[#487B8E] focus:border-transparent transition-all duration-300 appearance-none"
                         >
                           <option value="1">1 Passenger</option>
                           <option value="2">2 Passengers</option>
@@ -113,9 +114,9 @@ const BookingSection = () => {
                   </div>
 
                   <div className="pt-4 flex justify-center">
-                    <button className="elegant-button-gold w-full md:w-auto min-w-[200px]">
+                    <Button variant="teal" className="w-full md:w-auto min-w-[200px]">
                       Search Flights
-                    </button>
+                    </Button>
                   </div>
                 </div>
               ) : (
@@ -127,10 +128,10 @@ const BookingSection = () => {
                       <label className="block text-sm font-medium text-white">From</label>
                       <div className="relative">
                         <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                          <MapPin size={18} className="text-gold-400" />
+                          <MapPin size={18} className="text-[#487B8E]" />
                         </div>
                         <select
-                          className="pl-10 w-full bg-dark-200 border border-dark-50 text-white rounded-sm py-3 focus:ring-2 focus:ring-gold-700 focus:border-transparent transition-all duration-300 appearance-none"
+                          className="pl-10 w-full bg-dark-200 border border-dark-50 text-white rounded-sm py-3 focus:ring-2 focus:ring-[#487B8E] focus:border-transparent transition-all duration-300 appearance-none"
                         >
                           <option value="">All Locations</option>
                           <option value="nyc">New York</option>
@@ -148,10 +149,10 @@ const BookingSection = () => {
                       <label className="block text-sm font-medium text-white">Date Range</label>
                       <div className="relative">
                         <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                          <Calendar size={18} className="text-gold-400" />
+                          <Calendar size={18} className="text-[#487B8E]" />
                         </div>
                         <select
-                          className="pl-10 w-full bg-dark-200 border border-dark-50 text-white rounded-sm py-3 focus:ring-2 focus:ring-gold-700 focus:border-transparent transition-all duration-300 appearance-none"
+                          className="pl-10 w-full bg-dark-200 border border-dark-50 text-white rounded-sm py-3 focus:ring-2 focus:ring-[#487B8E] focus:border-transparent transition-all duration-300 appearance-none"
                         >
                           <option value="7">Next 7 days</option>
                           <option value="14">Next 14 days</option>
@@ -165,9 +166,9 @@ const BookingSection = () => {
                   </div>
                   
                   <div className="pt-4 flex justify-center">
-                    <button className="elegant-button-gold w-full md:w-auto min-w-[200px]">
+                    <Button variant="teal" className="w-full md:w-auto min-w-[200px]">
                       View Available Flights
-                    </button>
+                    </Button>
                   </div>
                 </div>
               )}
@@ -191,7 +192,7 @@ const ChevronDown = () => (
     strokeWidth="2" 
     strokeLinecap="round" 
     strokeLinejoin="round" 
-    className="text-gold-400"
+    className="text-[#487B8E]"
   >
     <path d="m6 9 6 6 6-6"/>
   </svg>

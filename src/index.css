@@ -73,7 +73,7 @@
   }
   
   .elegant-button-teal {
-    @apply px-6 py-3 bg-teal-500 text-white hover:bg-teal-600 transition-all duration-300 rounded-sm shadow-md;
+    @apply px-6 py-3 bg-[#487B8E] text-white hover:bg-[#3A6A7D] transition-all duration-300 rounded-sm shadow-md;
   }
   
   .elegant-input {
@@ -85,7 +85,7 @@
   }
   
   .subtle-chip {
-    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-teal-900/50 text-teal-200 uppercase tracking-wider;
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-[#487B8E]/50 text-white uppercase tracking-wider;
   }
 
   .tab-button {
@@ -93,7 +93,7 @@
   }
   
   .tab-button-active {
-    @apply bg-dark-100 text-white border-b-2 border-teal-500;
+    @apply bg-dark-100 text-white border-b-2 border-[#487B8E];
   }
 }
 
@@ -164,11 +164,11 @@
 }
 
 .luxury-input {
-  @apply bg-dark-200 border border-dark-50 text-white focus:border-teal-500 focus:ring-1 focus:ring-teal-500;
+  @apply bg-dark-200 border border-dark-50 text-white focus:border-[#487B8E] focus:ring-1 focus:ring-[#487B8E];
 }
 
 .luxury-select {
-  @apply bg-dark-200 border border-dark-50 text-white focus:border-teal-500 focus:ring-1 focus:ring-teal-500;
+  @apply bg-dark-200 border border-dark-50 text-white focus:border-[#487B8E] focus:ring-1 focus:ring-[#487B8E];
 }
 
 .section-heading {
@@ -188,7 +188,7 @@
 }
 
 .section-divider span {
-  @apply text-teal-500 text-xs uppercase tracking-widest font-medium bg-dark-100 px-4;
+  @apply text-[#487B8E] text-xs uppercase tracking-widest font-medium bg-dark-100 px-4;
 }
 
 .section-divider::before,

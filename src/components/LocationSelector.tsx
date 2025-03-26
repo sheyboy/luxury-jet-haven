@@ -58,7 +58,7 @@ const LocationSelector = () => {
                 <input
                   type="text"
                   placeholder="Search airports..."
-                  className="pl-10 w-full border border-jet-200 rounded-md py-2 focus:ring-2 focus:ring-gold-500 focus:border-transparent transition-all duration-300"
+                  className="pl-10 w-full border border-jet-200 rounded-md py-2 focus:ring-2 focus:ring-[#487B8E] focus:border-transparent transition-all duration-300"
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
                 />
@@ -72,7 +72,7 @@ const LocationSelector = () => {
                     key={region.id}
                     className={`px-4 py-2 rounded-md transition-colors duration-300 ${
                       activeRegion === region.id
-                        ? 'bg-jet-800 text-white'
+                        ? 'bg-[#487B8E] text-white'
                         : 'bg-white text-jet-700 hover:bg-jet-100'
                     }`}
                     onClick={() => setActiveRegion(region.id)}
@@ -91,7 +91,7 @@ const LocationSelector = () => {
                 >
                   <div className="flex items-start">
                     <div className="mr-3 mt-1">
-                      <MapPin size={18} className="text-gold-600" />
+                      <MapPin size={18} className="text-[#487B8E]" />
                     </div>
                     <div>
                       <div className="flex items-center">
@@ -109,7 +109,7 @@ const LocationSelector = () => {
           </div>
           
           <div className="mt-8 text-center">
-            <a href="/destinations" className="elegant-link">
+            <a href="/destinations" className="text-[#487B8E] hover:text-[#3A6A7D] transition-colors duration-300 underline-offset-2 hover:underline">
               View All Destinations
             </a>
           </div>

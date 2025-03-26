@@ -30,7 +30,8 @@ const Hero = () => {
           <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6">
             <Button 
               asChild
-              className="bg-teal-500 hover:bg-teal-600 w-full sm:w-auto flex items-center justify-center space-x-2 animate-fade-up"
+              variant="teal"
+              className="w-full sm:w-auto flex items-center justify-center space-x-2 animate-fade-up"
             >
               <a href="/book-now">
                 <span>Book Your Flight</span>
