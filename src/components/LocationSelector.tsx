@@ -47,7 +47,7 @@ const LocationSelector = () => {
           <div className="bg-jet-50 rounded-lg p-6 shadow-md animate-fade-up" style={{ animationDelay: '200ms' }}>
             <div className="flex flex-wrap items-center justify-between mb-6">
               <div className="flex items-center space-x-2 text-jet-800 mb-4 md:mb-0">
-                <Globe size={20} />
+                <Globe size={20} className="text-[#487B8E]" />
                 <span className="font-medium">Select Region</span>
               </div>
               

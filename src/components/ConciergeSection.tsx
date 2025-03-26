@@ -94,7 +94,7 @@ const ConciergeSection = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               <div className="text-center">
                 <div className="w-16 h-16 bg-jet-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Clock size={24} className="text-jet-800" />
+                  <Clock size={24} className="text-[#487B8E]" />
                 </div>
                 <h3 className="text-lg font-medium text-jet-900 mb-2">24/7 Availability</h3>
                 <p className="text-jet-600 text-sm">Round-the-clock support wherever you are in the world</p>
@@ -102,7 +102,7 @@ const ConciergeSection = () => {
               
               <div className="text-center">
                 <div className="w-16 h-16 bg-jet-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <UserCheck size={24} className="text-jet-800" />
+                  <UserCheck size={24} className="text-[#487B8E]" />
                 </div>
                 <h3 className="text-lg font-medium text-jet-900 mb-2">Dedicated Manager</h3>
                 <p className="text-jet-600 text-sm">Personal concierge manager assigned to each client</p>
@@ -110,7 +110,7 @@ const ConciergeSection = () => {
               
               <div className="text-center">
                 <div className="w-16 h-16 bg-jet-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Star size={24} className="text-jet-800" />
+                  <Star size={24} className="text-[#487B8E]" />
                 </div>
                 <h3 className="text-lg font-medium text-jet-900 mb-2">VIP Treatment</h3>
                 <p className="text-jet-600 text-sm">Exclusive access and premium upgrades at every destination</p>
@@ -118,7 +118,7 @@ const ConciergeSection = () => {
               
               <div className="text-center">
                 <div className="w-16 h-16 bg-jet-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Shield size={24} className="text-jet-800" />
+                  <Shield size={24} className="text-[#487B8E]" />
                 </div>
                 <h3 className="text-lg font-medium text-jet-900 mb-2">Privacy Guaranteed</h3>
                 <p className="text-jet-600 text-sm">Discreet service with highest level of confidentiality</p>
