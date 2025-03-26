@@ -42,7 +42,7 @@ const Navbar = () => {
               src="/lovable-uploads/68a49603-00a2-430e-97c1-da80f0e1c44d.png" 
               alt="JetSett Logo" 
               className="h-15 transition-all duration-300"
-              style={{ height: "15rem" }}
+              style={{ height: "12.5rem" }}
             />
           </Link>
 

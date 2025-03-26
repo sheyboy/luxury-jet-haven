@@ -19,7 +19,7 @@ const Hero = () => {
             src="/lovable-uploads/68a49603-00a2-430e-97c1-da80f0e1c44d.png" 
             alt="JetSett Logo" 
             className="h-18 mx-auto mb-8 animate-fade-in"
-            style={{ height: "18rem" }}
+            style={{ height: "15rem" }}
           />
           <h1 className="text-5xl md:text-7xl font-light text-white mb-6 leading-tight text-shadow-lg tracking-wider">
             Redefining Travel,<br/> Redefining Luxury
