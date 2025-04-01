@@ -33,7 +33,7 @@ const HeroImageGrid = ({ images }: HeroImageGridProps) => {
       
       if (scrollRef2.current) {
         scrollRef2.current.scrollTop += scrollSpeed2 * (deltaTime / 16);
-        // Reset scroll position when reaching top
+        // Reset scroll position when reaching top or becoming negative
         if (scrollRef2.current.scrollTop <= 0) {
           scrollRef2.current.scrollTop = scrollRef2.current.scrollHeight - scrollRef2.current.clientHeight;
         }

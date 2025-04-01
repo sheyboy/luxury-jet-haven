@@ -19,7 +19,8 @@ const HeroImageColumn = ({
     <div className="space-y-4 h-full overflow-hidden">
       <ScrollArea 
         ref={scrollRef} 
-        className="h-full overflow-hidden rounded-lg scrollbar-hide"
+        className="h-full overflow-hidden rounded-lg"
+        scrollHideDelay={0}
       >
         <div className="space-y-4 pr-4 pb-4">
           {indices.map((index) => (
