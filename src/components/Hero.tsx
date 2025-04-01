@@ -1,28 +1,64 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import VideoBackground from './VideoBackground';
 import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { HoverCard, HoverCardContent, HoverCardTrigger } from '@/components/ui/hover-card';
-import { AspectRatio } from '@/components/ui/aspect-ratio';
+import { ScrollArea } from '@/components/ui/scroll-area';
+import { 
+  Carousel,
+  CarouselContent,
+  CarouselItem
+} from '@/components/ui/carousel';
 
 const Hero = () => {
-  const [activeIndex, setActiveIndex] = useState(0);
-  
   const images = [
-    "/lovable-uploads/68a49603-00a2-430e-97c1-da80f0e1c44d.png",
+    "/lovable-uploads/68a49603-00a2-430e-97c1-da80f0e1c44d.png", // Logo
     "https://images.unsplash.com/photo-1599779406495-efc209043dbb?q=80&w=1920&auto=format&fit=crop",
     "https://images.unsplash.com/photo-1637333354607-a27177328b9c?q=80&w=1920&auto=format&fit=crop",
     "https://images.unsplash.com/photo-1540962351504-03099e0a754b?q=80&w=1920&auto=format&fit=crop",
     "https://images.unsplash.com/photo-1464037866556-6812c9d1c72e?q=80&w=1920&auto=format&fit=crop"
   ];
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setActiveIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 5000);
+  const scrollRef1 = useRef<HTMLDivElement>(null);
+  const scrollRef2 = useRef<HTMLDivElement>(null);
 
-    return () => clearInterval(interval);
+  // Effect for automatic scrolling in opposite directions
+  useEffect(() => {
+    const scrollSpeed1 = 0.5;
+    const scrollSpeed2 = -0.5;
+    let animationFrameId: number;
+    let lastTimestamp: number | null = null;
+    
+    const scroll = (timestamp: number) => {
+      if (!lastTimestamp) lastTimestamp = timestamp;
+      const deltaTime = timestamp - lastTimestamp;
+      lastTimestamp = timestamp;
+      
+      if (scrollRef1.current) {
+        scrollRef1.current.scrollTop += scrollSpeed1 * (deltaTime / 16);
+        // Reset scroll position when reaching bottom
+        if (scrollRef1.current.scrollTop >= scrollRef1.current.scrollHeight - scrollRef1.current.clientHeight) {
+          scrollRef1.current.scrollTop = 0;
+        }
+      }
+      
+      if (scrollRef2.current) {
+        scrollRef2.current.scrollTop += scrollSpeed2 * (deltaTime / 16);
+        // Reset scroll position when reaching top
+        if (scrollRef2.current.scrollTop <= 0) {
+          scrollRef2.current.scrollTop = scrollRef2.current.scrollHeight - scrollRef2.current.clientHeight;
+        }
+      }
+      
+      animationFrameId = requestAnimationFrame(scroll);
+    };
+    
+    animationFrameId = requestAnimationFrame(scroll);
+    
+    return () => {
+      cancelAnimationFrame(animationFrameId);
+    };
   }, []);
 
   return (
@@ -32,91 +68,143 @@ const Hero = () => {
         opacity={0.7}
       />
       
-      <div className="absolute inset-0 flex flex-col items-center justify-center px-4">
-        <div className="max-w-7xl w-full animate-fade-down">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10">
-            {/* Left column - 2 images stacked */}
-            <div className="space-y-4">
-              <div className="rounded-lg overflow-hidden shadow-lg transition-all duration-300 hover:scale-[1.02]">
-                <AspectRatio ratio={1/1}>
-                  <img 
-                    src={images[1]} 
-                    alt="Luxury jet interior" 
-                    className="object-cover w-full h-full"
-                  />
-                </AspectRatio>
-              </div>
-              
-              <div className="rounded-lg overflow-hidden shadow-lg transition-all duration-300 hover:scale-[1.02]">
-                <AspectRatio ratio={1/1}>
-                  <img 
-                    src={images[2]} 
-                    alt="Private jet" 
-                    className="object-cover w-full h-full"
-                  />
-                </AspectRatio>
-              </div>
-            </div>
-            
-            {/* Center column - Logo and text */}
-            <div className="flex flex-col items-center justify-center text-center">
-              <img 
-                src={images[0]} 
-                alt="JetSett Logo" 
-                className="h-18 mx-auto mb-8 animate-fade-in"
-                style={{ height: "15rem" }}
-              />
-              <h1 className="text-5xl md:text-7xl font-light text-white mb-6 leading-tight text-shadow-lg tracking-wider">
-                Redefining Travel,<br/> Redefining Luxury
-              </h1>
-              <p className="text-lg md:text-xl text-white/90 mb-10 max-w-2xl mx-auto leading-relaxed text-shadow">
-                Fly JetSett – Your Exclusive Experience Awaits
-              </p>
-              
-              <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6">
-                <Button 
-                  asChild
-                  variant="teal"
-                  className="w-full sm:w-auto flex items-center justify-center space-x-2 animate-fade-up"
-                >
-                  <a href="/book-now">
-                    <span>Book Your Flight</span>
-                    <ArrowRight size={16} />
-                  </a>
-                </Button>
+      <div className="absolute inset-0 flex items-center justify-center px-4">
+        <div className="max-w-7xl w-full h-full py-16 animate-fade-down">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 h-full">
+            {/* Left column - Text content */}
+            <div className="flex flex-col justify-center">
+              <div className="mb-8">
+                <img 
+                  src={images[0]} 
+                  alt="JetSett Logo" 
+                  className="h-20 md:h-32 mb-8 animate-fade-in"
+                  style={{ height: "12.5rem" }}
+                />
+                <h1 className="text-5xl md:text-7xl font-light text-white mb-6 leading-tight text-shadow-lg tracking-wider">
+                  Redefining Travel,<br/> Redefining Luxury
+                </h1>
+                <p className="text-lg md:text-xl text-white/90 mb-10 max-w-2xl leading-relaxed text-shadow">
+                  Fly JetSett – Your Exclusive Experience Awaits
+                </p>
                 
-                <Button 
-                  variant="outline" 
-                  asChild
-                  className="bg-transparent border border-white text-white hover:bg-white/10 w-full sm:w-auto animate-fade-up" 
-                  style={{ animationDelay: '100ms' }}
-                >
-                  <a href="/fleet">Explore Our Fleet</a>
-                </Button>
+                <div className="flex flex-col sm:flex-row items-start space-y-4 sm:space-y-0 sm:space-x-6">
+                  <Button 
+                    asChild
+                    variant="teal"
+                    className="w-full sm:w-auto flex items-center justify-center space-x-2 animate-fade-up"
+                  >
+                    <a href="/book-now">
+                      <span>Book Your Flight</span>
+                      <ArrowRight size={16} />
+                    </a>
+                  </Button>
+                  
+                  <Button 
+                    variant="outline" 
+                    asChild
+                    className="bg-transparent border border-white text-white hover:bg-white/10 w-full sm:w-auto animate-fade-up" 
+                    style={{ animationDelay: '100ms' }}
+                  >
+                    <a href="/fleet">Explore Our Fleet</a>
+                  </Button>
+                </div>
               </div>
             </div>
             
-            {/* Right column - 2 images stacked */}
-            <div className="space-y-4">
-              <div className="rounded-lg overflow-hidden shadow-lg transition-all duration-300 hover:scale-[1.02]">
-                <AspectRatio ratio={1/1}>
-                  <img 
-                    src={images[3]} 
-                    alt="Luxury service" 
-                    className="object-cover w-full h-full"
-                  />
-                </AspectRatio>
+            {/* Right column - Scrolling images */}
+            <div className="hidden md:grid grid-cols-2 gap-4 h-[80vh]">
+              {/* First column of images - scrolling down */}
+              <div className="space-y-4 h-full overflow-hidden">
+                <ScrollArea 
+                  ref={scrollRef1} 
+                  className="h-full overflow-hidden rounded-lg"
+                >
+                  <div className="space-y-4 pr-4 pb-4">
+                    {[1, 3].map((index) => (
+                      <div 
+                        key={`img-down-${index}`}
+                        className="rounded-lg overflow-hidden shadow-lg transition-all duration-300 hover:scale-[1.02] mb-4"
+                      >
+                        <img 
+                          src={images[index]} 
+                          alt={`Luxury jet ${index}`}
+                          className="object-cover w-full h-[40vh]"
+                        />
+                      </div>
+                    ))}
+                    {/* Duplicate images for continuous scroll */}
+                    {[1, 3].map((index) => (
+                      <div 
+                        key={`img-down-dup-${index}`}
+                        className="rounded-lg overflow-hidden shadow-lg transition-all duration-300 hover:scale-[1.02] mb-4"
+                      >
+                        <img 
+                          src={images[index]} 
+                          alt={`Luxury jet ${index}`}
+                          className="object-cover w-full h-[40vh]"
+                        />
+                      </div>
+                    ))}
+                  </div>
+                </ScrollArea>
               </div>
               
-              <div className="rounded-lg overflow-hidden shadow-lg transition-all duration-300 hover:scale-[1.02]">
-                <AspectRatio ratio={1/1}>
-                  <img 
-                    src={images[4]} 
-                    alt="Jet flying" 
-                    className="object-cover w-full h-full"
-                  />
-                </AspectRatio>
+              {/* Second column of images - scrolling up */}
+              <div className="space-y-4 h-full overflow-hidden">
+                <ScrollArea 
+                  ref={scrollRef2}
+                  className="h-full overflow-hidden rounded-lg"
+                >
+                  <div className="space-y-4 pr-4 pb-4">
+                    {[2, 4].map((index) => (
+                      <div 
+                        key={`img-up-${index}`}
+                        className="rounded-lg overflow-hidden shadow-lg transition-all duration-300 hover:scale-[1.02] mb-4"
+                      >
+                        <img 
+                          src={images[index]} 
+                          alt={`Luxury jet ${index}`}
+                          className="object-cover w-full h-[40vh]"
+                        />
+                      </div>
+                    ))}
+                    {/* Duplicate images for continuous scroll */}
+                    {[2, 4].map((index) => (
+                      <div 
+                        key={`img-up-dup-${index}`}
+                        className="rounded-lg overflow-hidden shadow-lg transition-all duration-300 hover:scale-[1.02] mb-4"
+                      >
+                        <img 
+                          src={images[index]} 
+                          alt={`Luxury jet ${index}`}
+                          className="object-cover w-full h-[40vh]"
+                        />
+                      </div>
+                    ))}
+                  </div>
+                </ScrollArea>
               </div>
+            </div>
+
+            {/* Mobile carousel for small screens */}
+            <div className="md:hidden w-full">
+              <Carousel className="w-full">
+                <CarouselContent>
+                  {images.slice(1).map((image, index) => (
+                    <CarouselItem key={index}>
+                      <div className="p-1">
+                        <div className="rounded-lg overflow-hidden shadow-lg">
+                          <img
+                            src={image}
+                            alt={`Luxury jet ${index + 1}`}
+                            className="object-cover w-full h-[40vh]"
+                          />
+                        </div>
+                      </div>
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+              </Carousel>
             </div>
           </div>
         </div>
