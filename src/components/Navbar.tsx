@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, X, ChevronDown, Phone } from 'lucide-react';
@@ -41,8 +40,7 @@ const Navbar = () => {
             <img 
               src="/lovable-uploads/68a49603-00a2-430e-97c1-da80f0e1c44d.png" 
               alt="JetSett Logo" 
-              className="h-15 transition-all duration-300"
-              style={{ height: "12.5rem" }}
+              className="h-auto max-h-16 sm:max-h-20 transition-all duration-300"
             />
           </Link>
 

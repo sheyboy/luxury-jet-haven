@@ -13,7 +13,6 @@ import {
 
 const Hero = () => {
   const images = [
-    "/lovable-uploads/68a49603-00a2-430e-97c1-da80f0e1c44d.png", // Logo
     "https://images.unsplash.com/photo-1599779406495-efc209043dbb?q=80&w=1920&auto=format&fit=crop",
     "https://images.unsplash.com/photo-1637333354607-a27177328b9c?q=80&w=1920&auto=format&fit=crop",
     "https://images.unsplash.com/photo-1540962351504-03099e0a754b?q=80&w=1920&auto=format&fit=crop",
@@ -74,12 +73,6 @@ const Hero = () => {
             {/* Left column - Text content */}
             <div className="flex flex-col justify-center">
               <div className="mb-8">
-                <img 
-                  src={images[0]} 
-                  alt="JetSett Logo" 
-                  className="h-20 md:h-32 mb-8 animate-fade-in"
-                  style={{ height: "12.5rem" }}
-                />
                 <h1 className="text-5xl md:text-7xl font-light text-white mb-6 leading-tight text-shadow-lg tracking-wider">
                   Redefining Travel,<br/> Redefining Luxury
                 </h1>
@@ -117,10 +110,10 @@ const Hero = () => {
               <div className="space-y-4 h-full overflow-hidden">
                 <ScrollArea 
                   ref={scrollRef1} 
-                  className="h-full overflow-hidden rounded-lg"
+                  className="h-full overflow-hidden rounded-lg scrollbar-hide"
                 >
                   <div className="space-y-4 pr-4 pb-4">
-                    {[1, 3].map((index) => (
+                    {[0, 2].map((index) => (
                       <div 
                         key={`img-down-${index}`}
                         className="rounded-lg overflow-hidden shadow-lg transition-all duration-300 hover:scale-[1.02] mb-4"
@@ -133,7 +126,7 @@ const Hero = () => {
                       </div>
                     ))}
                     {/* Duplicate images for continuous scroll */}
-                    {[1, 3].map((index) => (
+                    {[0, 2].map((index) => (
                       <div 
                         key={`img-down-dup-${index}`}
                         className="rounded-lg overflow-hidden shadow-lg transition-all duration-300 hover:scale-[1.02] mb-4"
@@ -153,10 +146,10 @@ const Hero = () => {
               <div className="space-y-4 h-full overflow-hidden">
                 <ScrollArea 
                   ref={scrollRef2}
-                  className="h-full overflow-hidden rounded-lg"
+                  className="h-full overflow-hidden rounded-lg scrollbar-hide"
                 >
                   <div className="space-y-4 pr-4 pb-4">
-                    {[2, 4].map((index) => (
+                    {[1, 3].map((index) => (
                       <div 
                         key={`img-up-${index}`}
                         className="rounded-lg overflow-hidden shadow-lg transition-all duration-300 hover:scale-[1.02] mb-4"
@@ -169,7 +162,7 @@ const Hero = () => {
                       </div>
                     ))}
                     {/* Duplicate images for continuous scroll */}
-                    {[2, 4].map((index) => (
+                    {[1, 3].map((index) => (
                       <div 
                         key={`img-up-dup-${index}`}
                         className="rounded-lg overflow-hidden shadow-lg transition-all duration-300 hover:scale-[1.02] mb-4"
@@ -190,7 +183,7 @@ const Hero = () => {
             <div className="md:hidden w-full">
               <Carousel className="w-full">
                 <CarouselContent>
-                  {images.slice(1).map((image, index) => (
+                  {images.map((image, index) => (
                     <CarouselItem key={index}>
                       <div className="p-1">
                         <div className="rounded-lg overflow-hidden shadow-lg">
